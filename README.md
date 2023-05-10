@@ -2,13 +2,13 @@ Versão do Mouse de Sopro com MAIS de um sensor BMP280.
 
 LISTA DE MATERIAIS:
 
-Arduino Leonardo 
-Sensores BMP280 
-Multiplexer I2C 
-Level Shifter
-Fonte Externa 
-Conversor USB-Serial para depuração 
-Joystick
+Arduino Leonardo, 
+Sensores BMP280, 
+Multiplexer I2C, 
+Level Shifter,
+Fonte Externa, 
+Conversor USB-Serial para depuração,
+Joystick.
 
 Considerações:
 O Sensor BMP280 é um sensor que trabalha com 3,3 Volts, portanto quando se usa o Arduino 5V: 
