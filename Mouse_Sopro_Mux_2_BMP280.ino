@@ -3,20 +3,39 @@
 #include <Adafruit_BMP280.h>
 #include <Mouse.h>
 
-
+// Definições para o filtro 
 #define N_1 99
 #define N_INV 0.01
+
+// Margem de trabalho
 #define DELTA_SOPRO 1000
 
+// Canais do Mux
 #define CSN2 1
 #define CSN1 7
 #define CSN0 0
 
+/**
+ * PROTOTIPOS DAS FUNÇÕES 
+*/
 void selCanal(uint8_t canal);
+
+// Cliques normais
+void testClickBtnRight();
+void testClickBtnLeft();
+
+// Cliques presos
+void testBtnLeftHold();
+void testBtnRightHold();
+
 
 // Sensores de Pressão
 Adafruit_BMP280 BMP[3];
 
+
+/**
+ * VARIÁVEIS GLOBAIS
+*/
 static float media0;    
 static float media1;
 static float media2;
@@ -47,14 +66,6 @@ bool lastRightBtnHoldState;
 bool leftBtnHoldState;
 bool lastLeftBtnHoldState;
 
-void selCanal(uint8_t canal)
-{
-  Wire.beginTransmission(0x70);
-  Wire.write(1 << canal);
-  Wire.endTransmission(); 
-  delay(3);
-}
-
 void setup()
 {
   pinMode(analogico1, INPUT);
@@ -81,30 +92,46 @@ void setup()
   leftBtnHoldState = false;
   lastLeftBtnHoldState = false;
 
+  
+  /** TODO: Verificar porquê Mouse.begin() 
+   *  se ativado  neste ponto do código a comunicação fica instável
+   */
+
   //Mouse.begin();
+  
     
-  // inicializa as variaveis como entradas
+  // Utiliza a a segunda serial para depuração 
   Serial1.begin(57600);
   Serial1.println("Iniciando a Configuração");
 
   // Seta para 100kHz
+  /**
+   * TODO: Verificar se é efetiva essa linha, no osciloscópio e no código.
+   * Se realmente é configurado o I2C para trabalhar em 100kHz
+  */ 
   Wire.setClock(100000); 
 
+  // Seleciona o canal CSN0 do mux e inicializa o sensor BMP 
   selCanal(CSN0);
   BMP[0].begin(0x76);
   delay(20);
   Serial1.print("MUX Canal: "); Serial1.print(CSN0);Serial1.print(" : "); Serial1.println("Sensor 0 Ok");
   
+  // Seleciona o canal CSN0 do mux e inicializa o sensor BMP 
   selCanal(CSN1);
   BMP[1].begin(0x76);
   delay(20);
   Serial1.print("MUX Canal: "); Serial1.print(CSN1);Serial1.print(" : "); Serial1.println("Sensor 1 Ok");
  
+ // Seleciona o canal CSN0 do mux e inicializa o sensor BMP 
   selCanal(CSN2);
   BMP[2].begin(0x76);
   delay(20);
   Serial1.print("MUX Canal: "); Serial1.print(CSN2);Serial1.print(" : ");Serial1.println("Sensor 2 Ok");
 
+  /**
+   * Realiza a calibração dos sensores BMP280.
+  */
 
   Serial1.print("Iniciando a calibração do sensor 0 ");Serial1.print(" Canal: ");Serial1.print(CSN0);Serial1.print(" ");
   selCanal(CSN0);
@@ -131,19 +158,9 @@ void setup()
     media2 = (pressure2 +  N_1 * media2) * N_INV;
   }
   Serial1.print("média encontrada: "); Serial1.println(media2);
-  
- 
-/**/
+
   Serial1.println("Configurações e Calibrações concluídas!!!");
 }
-
-// Cliques normais
-void testClickBtnRight();
-void testClickBtnLeft();
-
-// Cliques presos
-void testBtnLeftHold();
-void testBtnRightHold();
  
 void loop() {
   pressure0 = 0;
@@ -303,4 +320,11 @@ void lerMovimentoJoystick()
   if ((xDistance != 0) || (yDistance != 0)) {
     Mouse.move(xDistance, yDistance, 0);
   }
+}
+void selCanal(uint8_t canal)
+{
+  Wire.beginTransmission(0x70);
+  Wire.write(1 << canal);
+  Wire.endTransmission(); 
+  delay(3);
 }
