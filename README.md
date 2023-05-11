@@ -14,7 +14,7 @@
 
 ## Considerações:
 * Level Shift:
-- Os BMP280 nas versões que experimentamos não tinham level shift integrado, sendo necessário a utilização de um módulo à parte.  
+- Os BMP280 nas versões que experimentamos não tinham level shifter  integrado, sendo necessário a utilização de um módulo à parte.  
 
 * Mux I2C:
 - Para o uso de mais de dois sensores é necessário o uso de um Multiplexer I2C.
@@ -25,7 +25,7 @@
 
 ## Erros corrigidos: 
 * Travamentos de leitura I2C/BMP280: 
-Problema nos níveis digitais. Solucionado com emprego Level-Shift
+Problema nos níveis digitais. Solucionado com emprego level shifter 
 
 * Leitura muito abaixo da média calculada: 
 Alimentação pela USB não fornecia corrente necessária. Solucionado com o uso de uma fonte externa.
