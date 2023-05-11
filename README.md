@@ -2,13 +2,13 @@
 
 ## LISTA DE MATERIAIS:
 
--1 - Arduino Leonardo 
--3 - Sensores BMP280 
--1 - Multiplexer I2C 
--1 - Level Shifter
--1 - Fonte Externa 
--1 - Conversor USB-Serial para depuração
--1 - Joystick
+- 1 - Arduino Leonardo 
+- 3 - Sensores BMP280 
+- 1 - Multiplexer I2C 
+- 1 - Level Shifter
+- 1 - Fonte Externa 
+- 1 - Conversor USB-Serial para depuração
+- 1 - Joystick
 
 ## Considerações:
 * Level-Shit:
@@ -25,7 +25,7 @@ Problema nos níveis digitais. Solucionado com o Level-Shift
 * Leitura errada muito abaixo da média: 
 Alimentação pela USB não fornece corrente necessária. Solucionado com o uso de uma fonte externa.
 
-## Todo:
+## Tarefas:
 * Na matriz de contatos: Problema com I2C quanto a aproximação das mãos nos fios, alterando o valor da leitura dos sensores ou travando o sensor
 
 * Verificar circuitos dos módulos/Datasheets para ver se cabe o uso de resistores de pullups nas linhas I2C e onde colocá-los. 
@@ -38,6 +38,6 @@ Alimentação pela USB não fornece corrente necessária. Solucionado com o uso 
 
 * Verificar a frequência do I2C e se ela é compatível com os modulos conectados a ela.
 
-## DEBUG:
+## Debug:
 A forma de debug utilizada é pela segunda porta serial com uso de um módulo USB-Serial externo. 
 Desta forma utilizamos alto do tipo:  "Serial1.println".
