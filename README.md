@@ -25,6 +25,7 @@
 
 ## Erros corrigidos: 
 * Travamentos de leitura I2C/BMP280: 
+
 Problema nos níveis digitais. Solucionado com emprego level shifter 
 
 * Leitura muito abaixo da média calculada: 
