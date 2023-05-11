@@ -11,33 +11,35 @@
 - 1 - Joystick
 
 ## Considerações:
-* Level-Shit:
-Os BMP280 nas versões que experimentamos não tinha level-shift integrado, sendo necessário a utilização de um módulo à parte.
+* Level Shift:
+Os BMP280 nas versões que experimentamos não tinha level shift integrado, sendo necessário a utilização de um módulo à parte. A necessidade dele deve-se porque usamos Arduinos de 5V. 
 
 * Mux I2C
 Para o uso de mais de dois sensores é necessário o uso de um Multiplexer I2C.
+
+* Fonte Externa
 Para o funcionamento de todos esses módulos é necessário que o Arduino seja alimentado por uma fonte externa.
+
 
 ## Erros corrigidos: 
 * Travamentos de leitura I2C/BMP280: 
-Problema nos níveis digitais. Solucionado com o Level-Shift
+Problema nos níveis digitais. Solucionado com emprego Level-Shift
 
-* Leitura errada muito abaixo da média: 
-Alimentação pela USB não fornece corrente necessária. Solucionado com o uso de uma fonte externa.
+* Leitura muito abaixo da média calculada: 
+Alimentação pela USB não fornecia corrente necessária. Solucionado com o uso de uma fonte externa.
 
 ## Tarefas:
-* Na matriz de contatos: Problema com I2C quanto a aproximação das mãos nos fios, alterando o valor da leitura dos sensores ou travando o sensor
+* Quando os fios da saída do mux são tocados pelas mãos, os valores lidos dos senseros mudam.
 
-* Verificar circuitos dos módulos/Datasheets para ver se cabe o uso de resistores de pullups nas linhas I2C e onde colocá-los. 
+* Pesquisar se é necessário o uso de resistores de pullups nas linhas I2C e onde colocá-los. 
 
-* Quando se usa Mouse.begin() no setup do sketch, a conexão da serial-usb com o windows fica instável. Deveríamos saber o porquê.
+* Quando se usa Mouse.begin() no setup, a conexão da serial-usb com o windows fica instável e as vezes não reconhecendo o mouse. Deveríamos saber o porquê.
 
 * Demais formas de interferência elétricas/magnéticas que ocasionam falha na comunicação i2c.
 
-* Testar uma versão do hardware com todas as ligações soldadas. 
+* Testar uma versão do hardware com todas as ligações soldadas, ao invés do uso de cabos jumper. 
 
-* Verificar a frequência do I2C e se ela é compatível com os modulos conectados a ela.
+* Verificar se a frequência do I2C é compatível com os modulos conectados à ela.
 
 ## Debug:
-A forma de debug utilizada é pela segunda porta serial com uso de um módulo USB-Serial externo. 
-Desta forma utilizamos alto do tipo:  "Serial1.println".
+Foi usada a segunda porta serial para fazer a leitura dos dados dos sensores. Usamos um módulo USB-Serial padrão e ligamos aos pinos TX, RX. Desta forma utilizamos algo do tipo:  "Serial1.println". 
