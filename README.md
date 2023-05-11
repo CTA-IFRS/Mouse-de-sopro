@@ -1,6 +1,6 @@
-## Versão do Mouse de Sopro com MAIS de um sensor BMP280.
+# Versão do Mouse de Sopro com MAIS de um sensor BMP280.
 
-# LISTA DE MATERIAIS:
+## LISTA DE MATERIAIS:
 
 1 - Arduino Leonardo 
 3 - Sensores BMP280 
