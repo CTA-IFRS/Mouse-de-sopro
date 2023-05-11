@@ -29,6 +29,7 @@
 Problema nos níveis digitais. Solucionado com emprego level shifter 
 
 * Leitura muito abaixo da média calculada: 
+
 Alimentação pela USB não fornecia corrente necessária. Solucionado com o uso de uma fonte externa.
 
 ## Tarefas:
