@@ -14,13 +14,13 @@
 
 ## Considerações:
 * Level Shift:
-  - Os BMP280 nas versões que experimentamos não tinham level shift integrado, sendo necessário a utilização de um módulo à parte. A necessidade deve-se porque usamos Arduinos de 5 Volts que tem os níveis lógicos diferentes do sensor BMP280 que é de 3.3 Volts. No decorrer dos testes, como o uso de pooling, a comunicação travava. Mais tarde constatou-se que o sensor de pressão tem níveis lógicos ligeiramente diferentes.  
+- Os BMP280 nas versões que experimentamos não tinham level shift integrado, sendo necessário a utilização de um módulo à parte. A necessidade deve-se porque usamos Arduinos de 5 Volts que tem os níveis lógicos diferentes do sensor BMP280 que é de 3.3 Volts. No decorrer dos testes, como o uso de pooling, a comunicação travava. Mais tarde constatou-se que o sensor de pressão tem níveis lógicos ligeiramente diferentes.  
 
 * Mux I2C:
 - Para o uso de mais de dois sensores é necessário o uso de um Multiplexer I2C.
 
 * Fonte Externa:
-   - Para o funcionamento de todos esses módulos é necessário que o Arduino seja alimentado por uma fonte externa.
+- Para o funcionamento de todos esses módulos é necessário que o Arduino seja alimentado por uma fonte externa.
 
 
 ## Erros corrigidos: 
