@@ -24,9 +24,9 @@ Problema nos níveis digitais. Solucionado com o Level-Shift
 Alimentação pela USB não fornece corrente necessária. Solucionado com o uso de uma fonte externa.
 
 TODO:
-*Na matriz de contatos: Problema com I2C quanto a aproximação das mãos nos fios, alterando o valor da leitura dos sensores
+*Na matriz de contatos: Problema com I2C quanto a aproximação das mãos nos fios, alterando o valor da leitura dos sensores ou travando o sensor
 
-*Verificar circuitos dos módulos/Datasheets para ver se cabe o uso de resistores de pullups nas linhas I2C e onde colocá-los.
+*Verificar circuitos dos módulos/Datasheets para ver se cabe o uso de resistores de pullups nas linhas I2C e onde colocá-los. 
 
 *Quando se usa Mouse.begin() no setup do sketch, a conexão da serial-usb com o windows fica instável. Deveríamos saber o porquê.
 
@@ -35,4 +35,4 @@ TODO:
 *Testar uma versão do hardware com todas as ligações soldadas. 
 
 DEBUG:
-A forma de debug utilizada é pela segunda porta serial com uso de um módulo externo.
+A forma de debug utilizada é pela segunda porta serial com uso de um módulo USB-Serial externo.
