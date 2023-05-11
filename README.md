@@ -11,7 +11,7 @@ Conversor USB-Serial para depuração,
 Joystick.
 
 Considerações:
-O Sensor BMP280 é um sensor que trabalha com 3,3 Volts, portanto quando se usa o Arduino 5V: 
+Sensor BMP280:
 Nas versões que experimentamos não tinha level-shift integrado, sendo necessário a utilização de um módulo à parte.
 Para o uso de mais de dois sensores é necessário o uso de um Multiplexer I2C.
 Para o funcionamento de todos esses módulos é necessário que o Arduino seja alimentado por uma fonte externa.
@@ -32,5 +32,7 @@ TODO:
 
 *Demais formas de interferência elétricas/magnéticas que ocasionam falha na comunicação i2c.
 
+*Testar uma versão do hardware com todas as ligações soldadas. 
+
 DEBUG:
-A forma de debug utilizada é pela segunda porta serial com módulo externo.
+A forma de debug utilizada é pela segunda porta serial com uso de um módulo externo.
