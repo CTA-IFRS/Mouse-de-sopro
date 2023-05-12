@@ -101,12 +101,13 @@ void setup()
   
     
   // Utiliza a a segunda serial para depuração 
+  // No caso do arduino leonardo é a Serial1
   Serial1.begin(57600);
   Serial1.println("Iniciando a Configuração");
 
   // Seta para 100kHz
   /**
-   * TODO: Verificar se é efetiva essa linha, no osciloscópio e no código.
+   * TODO: Verificar no osciloscópio 
    * Se realmente é configurado o I2C para trabalhar em 100kHz
   */ 
   Wire.setClock(100000); 
