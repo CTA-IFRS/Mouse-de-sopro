@@ -13,7 +13,7 @@
 - 1 - Joystick
 
 ## Considerações:
-* Level Shift:
+* Level Shifter:
 - Os BMP280 nas versões que experimentamos não tinham level shifter  integrado, sendo necessário a utilização de um módulo à parte.  
 
 * Mux I2C:
