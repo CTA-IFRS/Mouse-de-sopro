@@ -18,11 +18,11 @@
 
 * Mux I2C:
 
-    Para o uso de mais de dois sensores é necessário o uso de um Multiplexer I2C.
+    - Para o uso de mais de dois sensores é necessário o uso de um Multiplexer I2C.
 
 * Fonte Externa:
 
-    Para o funcionamento de todos esses módulos é necessário que o Arduino seja alimentado por uma fonte externa.
+    - Para o funcionamento de todos esses módulos é necessário que o Arduino seja alimentado por uma fonte externa.
 
 
 ## Erros corrigidos: 
