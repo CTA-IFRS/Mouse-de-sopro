@@ -17,16 +17,18 @@
 - Os BMP280 nas versões que experimentamos não tinham level shifter  integrado, sendo necessário a utilização de um módulo à parte.  
 
 * Mux I2C:
-- Para o uso de mais de dois sensores é necessário o uso de um Multiplexer I2C.
+
+    Para o uso de mais de dois sensores é necessário o uso de um Multiplexer I2C.
 
 * Fonte Externa:
-- Para o funcionamento de todos esses módulos é necessário que o Arduino seja alimentado por uma fonte externa.
+
+    Para o funcionamento de todos esses módulos é necessário que o Arduino seja alimentado por uma fonte externa.
 
 
 ## Erros corrigidos: 
 * Travamentos de leitura I2C/BMP280: 
 
-Problema nos níveis digitais. Solucionado com emprego level shifter 
+Problema nos níveis digitais. Solucionado com emprego do level shifter 
 
 * Leitura muito abaixo da média calculada: 
 
