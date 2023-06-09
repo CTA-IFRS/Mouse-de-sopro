@@ -33,9 +33,10 @@ Problema nos níveis digitais. Solucionado com emprego do level shifter
 * Leitura muito abaixo da média calculada: 
 
 Alimentação pela USB não fornecia corrente necessária. Solucionado com o uso de uma fonte externa.
+Usamos a fonte de bancada, será substituido por baterias recarregáveis padrão 16850
 
 ## Tarefas:
-* Quando os fios da saída do mux são tocados pelas mãos, os valores lidos dos senseros mudam.
+* Quando os fios da saída do mux são tocados pelas mãos, os valores lidos dos sensores mudam.
 
 * Pesquisar se é necessário o uso de resistores de pullups nas linhas I2C e onde colocá-los. 
 
